@@ -1,0 +1,87 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 2em
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 2em; /* Increase the font size for all headings */
+  }
+
+  p {
+    font-size: 1.2em; /* Increase the font size for all paragraphs */
+  }
+  
+
+/* Basic styling with gradient background */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #007BFF 0%, #28A745 100%); /* Gradient from blue to green */
+    color: #ffffff; /* White text for better visibility */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    color: #ffffff;
+    padding: 20px 10%;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a.active, nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content area */
+main {
+    padding: 20px 10%;
+    text-align: center;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}

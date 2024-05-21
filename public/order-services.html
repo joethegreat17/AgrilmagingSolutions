@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Services</title>
+    <link rel="stylesheet" href="order-services.css"> <!-- Link to the external CSS file for styling -->
+</head>
+<body>
+    <!-- Header section with the company name and navigation menu -->
+    <header>
+        <h1>Agrilmaging Solutions</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <main>
+        <h1>Order Services</h1>
+        <!-- Order form for selecting services and calculating costs -->
+        <form id="order-form">
+            <fieldset>
+                <legend>Select the type of service:</legend>
+                <div>
+                    <input type="checkbox" id="option1" name="option" value="option1">
+                    <label for="option1">Option 1 - $10 per acre</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="option2" name="option" value="option2">
+                    <label for="option2">Option 2 - $20 per acre</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="option3" name="option" value="option3">
+                    <label for="option3">Option 3 - $30 per acre</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="option4" name="option" value="option4">
+                    <label for="option4">Option 4 - $40 per acre</label>
+                </div>
+            </fieldset>
+            <label for="space">Estimated acres:</label>
+            <input type="number" id="space" name="space" min="1" required>
+            <button type="submit">Calculate Cost</button>
+        </form>
+        <div id="result"></div> <!-- Result div to display the calculated cost -->
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>Copyright © Your Company 2023</p>
+    </footer>
+
+    <!-- JavaScript to handle form submission and cost calculation -->
+    <script>
+        const form = document.getElementById('order-form');
+        const spaceInput = document.getElementById('space');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent the form from submitting the traditional way
+            const space = parseInt(spaceInput.value, 10); // Get the value of the space input and convert it to an integer
+            const options = document.querySelectorAll('input[name="option"]:checked'); // Get all checked options
+            let cost = 0;
+            options.forEach((option) => { // Calculate the total cost based on the selected options
+                let unitRate;
+                if (option.value === 'option1') {
+                    unitRate = 10;
+                } else if (option.value === 'option2') {
+                    unitRate = 20;
+                } else if (option.value === 'option3') {
+                    unitRate = 30;
+                } else if (option.value === 'option4') {
+                    unitRate = 40;
+                }
+                cost += space * unitRate;
+            });
+            resultDiv.textContent = `The total cost for checking ${space} acres is $${cost}.`; // Display the result
+        });
+    </script>
+</body>
+</html>

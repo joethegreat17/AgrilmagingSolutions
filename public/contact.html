@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Agricultural Drone Services</title>
+    <link rel="stylesheet" href="contact.css"> <!-- Ensure your CSS file is correctly linked -->
+</head>
+<body>
+    <!-- Header section with the company name and navigation menu -->
+    <header>
+        <h1>Agrilmaging Solutions</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <main>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need more information, please fill out the form below and we will respond as soon as possible.</p>
+        
+        <!-- Contact form -->
+        <form action="http://localhost:3000/send" method="post">
+            <!-- Name input field -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <!-- Email input field -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <!-- Message textarea field -->
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <!-- Submit button -->
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>Copyright © Your Company 2023</p>
+    </footer>
+</body>
+</html>
